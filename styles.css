@@ -1,0 +1,117 @@
+:root {
+  --bg: #121212;
+  --card-bg: #1f1f1f;
+  --text: #fff;
+  --selected: #6a40ff;
+  --shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(145deg, #202020, #0d0d0d);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+}
+
+.brand-container {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #262626;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.card.active {
+  outline: 2px solid var(--selected);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.selector {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #666;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.selector.selected {
+  background: var(--selected);
+  border: none;
+}
+
+.icon-group {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.green { background-color: #00cba0; }
+.orange { background-color: #f5a623; }
+.red { background-color: #ff4b4b; }
+
+.cloud {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.right .settings-btn {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right {
+    align-self: flex-end;
+  }
+}
